@@ -1,12 +1,13 @@
 package com.Blog.model;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "tb_posts")
 public class Post {
     
     @Id
@@ -28,8 +31,6 @@ public class Post {
 
     @Column(nullable = false)
     private LocalDate dataDeCriacao;
-
-    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
