@@ -1,5 +1,6 @@
 package com.Blog.model;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
@@ -27,6 +28,8 @@ public class Post {
 
     @Column(nullable = false)
     private LocalDate dataDeCriacao;
+
+    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
